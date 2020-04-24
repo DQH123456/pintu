@@ -127,6 +127,7 @@
     pic[i].addEventListener('transitionend',function(){
     if(isSuccess()){
     console.log('成功了！'); //此处监听事件有bug，会添加上多次事件。
+    alert('恭喜您成功了！')
     }else{
     // pic[i].removeEventListener('transitionend');
     }
