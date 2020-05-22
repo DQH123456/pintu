@@ -30,7 +30,27 @@ body{
 	<title>成语填词</title>
 </head>
 <body style="background: #eee">
-
+	<div style="position: fixed;top: 3%;right:10%;width: 4%;height: 49px;">
+		<audio src="./icon/成语.mp3" id="aud"></audio>
+		<img src="./icon/122.png" id="playpause" style="width: 50px;"/>
+		<script type="text/javascript">
+			var aud = document.getElementById("aud");
+			var img = document.getElementById("playpause");
+			img.onclick = function() { 
+				if (aud.paused) {
+					aud.play();
+				} else {
+					aud.pause();
+				}
+			}
+			aud.addEventListener("play", function (e) {
+				img.src="./icon/222.png";
+			}, false);
+			aud.addEventListener("pause", function (e){
+				img.src="./icon/122.png";
+			}, false);
+		</script>
+	</div>
 <div id="header" style="height: 1rem;width: 10rem; text-align: center;line-height: 1rem">
 	第1关
 </div>

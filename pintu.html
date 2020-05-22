@@ -32,16 +32,39 @@
     #times{
         position: absolute;
         color: red;
-        top: 15px;
-        left: 300px;
+        top: 30px;
+        left: 290px;
         font-size: 20px;
+        font-weight: bolder;
     }
     </style>
 </head>
 <body>
+    
     <div class='controller'>
         <button id='go' style="font-size: 20px;margin-top: 30px;border-radius: 4px;">&emsp;开始&emsp;</button>
         <span id='times'></span>
+        <div style="position: fixed;top: 3%;right:10%;width: 4%;height: 49px;">
+            <audio src="./icon/water.mp3" id="aud"></audio>
+            <img src="./icon/122.png" id="playpause" style="width: 50px;"/>
+            <script type="text/javascript">
+                var aud = document.getElementById("aud");
+                var img = document.getElementById("playpause");
+                img.onclick = function() { 
+                    if (aud.paused) {
+                        aud.play();
+                    } else {
+                        aud.pause();
+                    }
+                }
+                aud.addEventListener("play", function (e) {
+                    img.src="./icon/222.png";
+                }, false);
+                aud.addEventListener("pause", function (e){
+                    img.src="./icon/122.png";
+                }, false);
+            </script>
+        </div>
     </div>
 <div id='picbox'>
     <div class="pic" data-index='1' style='background-position:0px 0px;left:0px;top:0px;'></div>
