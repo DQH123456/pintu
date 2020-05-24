@@ -1,0 +1,19 @@
+<audio src="./icon/我的未来式.mp3" id="aud" autoplay loop="loop" val="open"></audio>
+<img src="./icon/12.png" id="playpause" />
+<script type="text/javascript">
+    var aud = document.getElementById("aud");
+    var img = document.getElementById("playpause");
+    img.onclick = function() {
+        if (aud.paused) {
+            aud.play();
+        } else {
+            aud.pause();
+        }
+    }
+    aud.addEventListener("play", function (e) {
+        img.src="./icon/22.png";
+    }, false);
+    aud.addEventListener("pause", function (e){          
+        img.src="./icon/12.png";
+    }, false);
+</script>
